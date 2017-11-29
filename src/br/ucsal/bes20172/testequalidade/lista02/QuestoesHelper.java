@@ -12,6 +12,12 @@ public class QuestoesHelper {
 		}
 	}
 
+	public  int obterUmNumero(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Informe um número maior ou igual à zero:");
+		return sc.nextInt();
+	}
+	
 	public int encontrarMaiorNumero(int[] vet) {
 		int maior = vet[0];
 		for (int i = 1; i < vet.length; i++) {
@@ -41,6 +47,28 @@ public class QuestoesHelper {
 		for (int i = 0; i < vetInvertida.length; i++) {
 			System.out.print(" " + vetInvertida[i]);
 		}
+	}
+	
+	public boolean verificarNumeroPrimo(int n) {
+		int contPrim = 0;
+		for (int i=1;i<=n;i++) {
+			if(n%i==0) {
+				contPrim++;	
+			}
+		}
+		if (contPrim ==2) {
+			return true;
+		}
+		return false;
+	}
+
+	public  void exibirResultado(int n, boolean situacaoPrimo) {
+		if(situacaoPrimo) {
+			System.out.println("O número " + n + " é primo.");
+		} else {
+			System.out.println("O número " + n + " não é primo.");
+		}
+		
 	}
 
 	public void exibirMaiorNumero(int maior) {

@@ -1,0 +1,33 @@
+package br.ucsal.bes20172.testequalidade.lista02;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+
+public class Questao02Teste {
+
+	@Mock
+	private QuestoesHelper questoesHelper;
+
+	@Before
+	public void setup() {
+		MockitoAnnotations.initMocks(this);
+	}
+
+	@Test
+	public void obterNumerosExibirInformadoEInvertido() {
+
+		Questao02 questao02 = new Questao02(questoesHelper);
+
+		int vet[] = {};
+		int vetInvertida[] = {};
+		Mockito.doNothing().when(questoesHelper).obterNumeros(vet);
+		Mockito.doNothing().when(questoesHelper).inverterOrdemNumeros(vet, vetInvertida);
+		Mockito.doNothing().when(questoesHelper).exibirVetores(vet, vetInvertida);
+		
+		questao02.obterNumerosExibirInformadoEInvertido();
+		
+	}
+}
