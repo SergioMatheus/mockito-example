@@ -21,13 +21,17 @@ public class Questao02Teste {
 
 		Questao02 questao02 = new Questao02(questoesHelper);
 
-		int vet[] = {};
-		int vetInvertida[] = {};
-		Mockito.doNothing().when(questoesHelper).obterNumeros(vet);
+		int vet[] = {0,1,2,3,4};
+		int vetInvertida[] = {4,3,2,1,0};
+		Mockito.when(questoesHelper.obterNumeros()).thenReturn(vet);
 		Mockito.doNothing().when(questoesHelper).inverterOrdemNumeros(vet, vetInvertida);
 		Mockito.doNothing().when(questoesHelper).exibirVetores(vet, vetInvertida);
+		questoesHelper.obterNumeros();
+		questoesHelper.inverterOrdemNumeros(vet, vetInvertida);
+		questoesHelper.exibirVetores(vet, vetInvertida);
 		
 		questao02.obterNumerosExibirInformadoEInvertido();
+		Mockito.verify(questoesHelper);
 		
 	}
 }

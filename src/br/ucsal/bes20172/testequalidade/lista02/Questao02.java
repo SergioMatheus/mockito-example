@@ -11,9 +11,9 @@ public class Questao02 {
 	}
 
 	public void obterNumerosExibirInformadoEInvertido() {
-		int[] vet = new int[QTD_NUM];
+		
 		int[] vetInvertido = new int [QTD_NUM];
-		questoesHelper.obterNumeros(vet);
+		int[] vet = questoesHelper.obterNumeros();
 		questoesHelper.inverterOrdemNumeros(vet, vetInvertido);
 		questoesHelper.exibirVetores(vet, vetInvertido);
 	}

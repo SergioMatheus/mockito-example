@@ -4,12 +4,14 @@ import java.util.Scanner;
 
 public class QuestoesHelper {
 	
-	public void obterNumeros(int[] vet) {
+	public int[] obterNumeros() {
+		int[] vet=new int[5];
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Informe " + vet.length + " números:");
 		for (int i = 0; i < vet.length; i++) {
 			vet[i] = sc.nextInt();
 		}
+		return vet;
 	}
 
 	public  int obterUmNumero(){

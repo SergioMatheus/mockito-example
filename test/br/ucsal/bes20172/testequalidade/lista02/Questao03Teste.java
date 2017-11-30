@@ -19,14 +19,18 @@ public class Questao03Teste {
 	@Test
 	public void obterNumerosExibirInformadoEInvertido() {
 
-		int numeroObtido=0;
+		int numeroObtido=2;
 		Boolean situacaoPrimo=false;
 		Questao03 questao03 = new Questao03(questoesHelper);
-		Mockito.when(questoesHelper.obterUmNumero()).thenReturn(0);
-		Mockito.when(questoesHelper.verificarNumeroPrimo(numeroObtido)).thenReturn(false);
+		Mockito.when(questoesHelper.obterUmNumero()).thenReturn(2);
+		Mockito.when(questoesHelper.verificarNumeroPrimo(numeroObtido)).thenReturn(true);
 		Mockito.doNothing().when(questoesHelper).exibirResultado(numeroObtido, situacaoPrimo);
+		questoesHelper.obterUmNumero();
+		questoesHelper.verificarNumeroPrimo(numeroObtido);
+		questoesHelper.exibirResultado(numeroObtido, situacaoPrimo);
 		
 		questao03.obterNumeroExibirSePrimo();
+		Mockito.verify(questoesHelper);
 		
 	}
 }
